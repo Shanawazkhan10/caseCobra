@@ -1,0 +1,49 @@
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum OrderStatus{
+  fulfilled
+  shipped
+  awaitng_shipment
+}
+
+enum PhoneModel{
+  iphonex
+  iphone11
+  iphone12
+  iphone13
+  iphone14
+  iphone15
+}
+enum CaseMaterial{
+  silicone
+  polycarbonate
+}
+
+enum caseFinish{
+  smooth
+  textured
+}
+enum CaseColor{
+  black
+  blue 
+  rose
+}
+model Configuration{
+  id String @id @default(cuid())
+  width Int
+  height Int
+  imageURL String
+  model PhoneModel?
+  material CaseMaterial?
+  finish caseFinish?
+  color CaseColor?
+  cropppedImageURL String?  
+}
