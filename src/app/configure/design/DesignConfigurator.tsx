@@ -329,7 +329,7 @@ const DesignConfigurator = ({ configId, imageURL, imageDimension }: DesignConfig
                                     finish: "smooth",
                                     model: options.model.value,
                                     material: "silicone"
-                                })}>CLICK ME</button>
+                                })}>Done</button>
                             </div>
                         </div>
                     </div>
